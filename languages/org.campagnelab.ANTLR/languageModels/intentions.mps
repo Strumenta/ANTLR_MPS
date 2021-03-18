@@ -2,7 +2,7 @@
 <model ref="r:e1d4c225-523b-4e33-a0ab-b970dbb75eba(org.campagnelab.ANTLR.intentions)">
   <persistence version="9" />
   <languages>
-    <use id="d7a92d38-f7db-40d0-8431-763b0c3c9f20" name="jetbrains.mps.lang.intentions" version="0" />
+    <use id="d7a92d38-f7db-40d0-8431-763b0c3c9f20" name="jetbrains.mps.lang.intentions" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -90,7 +90,7 @@
       </concept>
       <concept id="1240322627579" name="jetbrains.mps.lang.intentions.structure.IntentionParameter" flags="nn" index="38Zlrr" />
       <concept id="1240395258925" name="jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration" flags="ig" index="3dkpOd">
-        <child id="1240395532443" name="queryBlock" index="3dlsAV" />
+        <child id="1240395532443" name="queryFunction" index="3dlsAV" />
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
@@ -233,7 +233,7 @@
                 <ref role="3cqZAo" node="v1yTSogtjZ" resolve="labeled" />
               </node>
               <node concept="3TrEf2" id="v1yTSogtOE" role="2OqNvi">
-                <ref role="3Tt5mk" to="ubjp:v1yTSnHWsJ" />
+                <ref role="3Tt5mk" to="ubjp:v1yTSnHWsJ" resolve="element" />
               </node>
             </node>
           </node>
@@ -383,7 +383,7 @@
                                 <ref role="1M0zk5" node="6Q37mFf9AJK" resolve="tokenRef" />
                               </node>
                               <node concept="3TrEf2" id="6Q37mFf9BZg" role="2OqNvi">
-                                <ref role="3Tt5mk" to="ubjp:v1yTSnbNW4" />
+                                <ref role="3Tt5mk" to="ubjp:v1yTSnbNW4" resolve="token" />
                               </node>
                             </node>
                             <node concept="3TrcHB" id="6Q37mFf9CDE" role="2OqNvi">
@@ -452,7 +452,7 @@
                                 <ref role="1M0zk5" node="6Q37mFf9UeZ" resolve="l" />
                               </node>
                               <node concept="3TrEf2" id="6Q37mFf9USC" role="2OqNvi">
-                                <ref role="3Tt5mk" to="ubjp:1tv9AyC$eYv" />
+                                <ref role="3Tt5mk" to="ubjp:1tv9AyC$eYv" resolve="rule" />
                               </node>
                             </node>
                             <node concept="3TrcHB" id="6Q37mFf9Vvn" role="2OqNvi">
@@ -577,7 +577,7 @@
                 <ref role="3cqZAo" node="5qM9mr9K3rV" resolve="labeled" />
               </node>
               <node concept="3TrEf2" id="5qM9mr9K3sa" role="2OqNvi">
-                <ref role="3Tt5mk" to="ubjp:v1yTSnHWsJ" />
+                <ref role="3Tt5mk" to="ubjp:v1yTSnHWsJ" resolve="element" />
               </node>
             </node>
           </node>

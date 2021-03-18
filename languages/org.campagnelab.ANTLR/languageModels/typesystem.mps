@@ -84,10 +84,6 @@
       <concept id="1175517767210" name="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement" flags="nn" index="2MkqsV">
         <child id="1175517851849" name="errorString" index="2MkJ7o" />
       </concept>
-      <concept id="1227096774658" name="jetbrains.mps.lang.typesystem.structure.MessageStatement" flags="ng" index="2OEH$v">
-        <child id="1227096802791" name="helginsIntention" index="2OEOjU" />
-        <child id="1227096802790" name="nodeToReport" index="2OEOjV" />
-      </concept>
       <concept id="1216383170661" name="jetbrains.mps.lang.typesystem.structure.TypesystemQuickFix" flags="ng" index="Q5z_Y">
         <child id="1216383424566" name="executeBlock" index="Q6x$H" />
         <child id="1216383476350" name="quickFixArgument" index="Q6Id_" />
@@ -106,6 +102,10 @@
         <child id="1195213635060" name="body" index="18ibNy" />
       </concept>
       <concept id="1195214364922" name="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" flags="ig" index="18kY7G" />
+      <concept id="3937244445246642777" name="jetbrains.mps.lang.typesystem.structure.AbstractReportStatement" flags="ng" index="1urrMJ">
+        <child id="3937244445246643221" name="helginsIntention" index="1urrFz" />
+        <child id="3937244445246642781" name="nodeToReport" index="1urrMF" />
+      </concept>
       <concept id="1210784285454" name="jetbrains.mps.lang.typesystem.structure.TypesystemIntention" flags="ng" index="3Cnw8n">
         <property id="1216127910019" name="applyImmediately" index="ARO6o" />
         <reference id="1216388525179" name="quickFix" index="QpYPw" />
@@ -266,10 +266,10 @@
             <node concept="Xl_RD" id="4L89IP4XHG8" role="2MkJ7o">
               <property role="Xl_RC" value="RefByName can be replaced with actual reference" />
             </node>
-            <node concept="1YBJjd" id="4L89IP4XJrA" role="2OEOjV">
+            <node concept="1YBJjd" id="4L89IP4XJrA" role="1urrMF">
               <ref role="1YBMHb" node="4L89IP4WqTE" resolve="ruleRefByName" />
             </node>
-            <node concept="3Cnw8n" id="4L89IP4XNIE" role="2OEOjU">
+            <node concept="3Cnw8n" id="4L89IP4XNIE" role="1urrFz">
               <property role="ARO6o" value="true" />
               <ref role="QpYPw" node="4L89IP4XLUt" resolve="ReplaceParserRuleRefByName" />
               <node concept="3CnSsL" id="4L89IP4XNM7" role="3Coj4f">
@@ -378,10 +378,10 @@
             <node concept="Xl_RD" id="v1yTSnpyA5" role="2MkJ7o">
               <property role="Xl_RC" value="RefByName can be replaced with Token reference" />
             </node>
-            <node concept="1YBJjd" id="v1yTSnpyA6" role="2OEOjV">
+            <node concept="1YBJjd" id="v1yTSnpyA6" role="1urrMF">
               <ref role="1YBMHb" node="4L89IP4WqTE" resolve="ruleRefByName" />
             </node>
-            <node concept="3Cnw8n" id="v1yTSnpyA7" role="2OEOjU">
+            <node concept="3Cnw8n" id="v1yTSnpyA7" role="1urrFz">
               <property role="ARO6o" value="true" />
               <ref role="QpYPw" node="v1yTSnp$34" resolve="ReplaceParserRuleRefByNameWithToken" />
               <node concept="3CnSsL" id="v1yTSnpyA8" role="3Coj4f">
@@ -662,10 +662,10 @@
             <node concept="Xl_RD" id="4L89IP4ZclB" role="2MkJ7o">
               <property role="Xl_RC" value="RefByName can be replaced with actual reference" />
             </node>
-            <node concept="1YBJjd" id="4L89IP4ZclC" role="2OEOjV">
+            <node concept="1YBJjd" id="4L89IP4ZclC" role="1urrMF">
               <ref role="1YBMHb" node="4L89IP4ZclL" resolve="lexerRuleRefByName" />
             </node>
-            <node concept="3Cnw8n" id="4L89IP4ZclD" role="2OEOjU">
+            <node concept="3Cnw8n" id="4L89IP4ZclD" role="1urrFz">
               <property role="ARO6o" value="true" />
               <ref role="QpYPw" node="4L89IP4ZbNj" resolve="ReplaceLexerRuleRefByName" />
               <node concept="3CnSsL" id="4L89IP4ZclE" role="3Coj4f">
@@ -773,10 +773,10 @@
             <node concept="Xl_RD" id="v1yTSnpBk4" role="2MkJ7o">
               <property role="Xl_RC" value="RefByName can be replaced with Token reference" />
             </node>
-            <node concept="1YBJjd" id="v1yTSnpC7P" role="2OEOjV">
+            <node concept="1YBJjd" id="v1yTSnpC7P" role="1urrMF">
               <ref role="1YBMHb" node="4L89IP4ZclL" resolve="lexerRuleRefByName" />
             </node>
-            <node concept="3Cnw8n" id="v1yTSnpBk6" role="2OEOjU">
+            <node concept="3Cnw8n" id="v1yTSnpBk6" role="1urrFz">
               <property role="ARO6o" value="true" />
               <ref role="QpYPw" node="v1yTSnpz5D" resolve="ReplaceLexerRuleRefByNameWithToken" />
               <node concept="3CnSsL" id="v1yTSnpBk7" role="3Coj4f">
@@ -814,7 +814,13 @@
       <node concept="3clFbJ" id="6BpdF0adDAj" role="3cqZAp">
         <node concept="3clFbS" id="6BpdF0adDAl" role="3clFbx">
           <node concept="2MkqsV" id="6BpdF0adE8c" role="3cqZAp">
-            <node concept="3Cnw8n" id="6BpdF0adEoN" role="2OEOjU">
+            <node concept="Xl_RD" id="6BpdF0adE8r" role="2MkJ7o">
+              <property role="Xl_RC" value="Alternative must have a name" />
+            </node>
+            <node concept="1YBJjd" id="6BpdF0adE9n" role="1urrMF">
+              <ref role="1YBMHb" node="6BpdF0adDrv" resolve="alternative" />
+            </node>
+            <node concept="3Cnw8n" id="6BpdF0adEoN" role="1urrFz">
               <property role="ARO6o" value="true" />
               <ref role="QpYPw" node="6BpdF0adEb5" resolve="FixAlternativeName" />
               <node concept="3CnSsL" id="6BpdF0adEq0" role="3Coj4f">
@@ -823,12 +829,6 @@
                   <ref role="1YBMHb" node="6BpdF0adDrv" resolve="alternative" />
                 </node>
               </node>
-            </node>
-            <node concept="1YBJjd" id="6BpdF0adE9n" role="2OEOjV">
-              <ref role="1YBMHb" node="6BpdF0adDrv" resolve="alternative" />
-            </node>
-            <node concept="Xl_RD" id="6BpdF0adE8r" role="2MkJ7o">
-              <property role="Xl_RC" value="Alternative must have a name" />
             </node>
           </node>
         </node>
@@ -1110,7 +1110,7 @@
                           <node concept="Xl_RD" id="5Vyo27wZAa0" role="2MkJ7o">
                             <property role="Xl_RC" value="When one alternative has a label, all alternatives must be labeled. This alternative is missing a label." />
                           </node>
-                          <node concept="37vLTw" id="5Vyo27wZN7$" role="2OEOjV">
+                          <node concept="37vLTw" id="5Vyo27wZN7$" role="1urrMF">
                             <ref role="3cqZAo" node="5Vyo27wZMQV" resolve="it" />
                           </node>
                         </node>

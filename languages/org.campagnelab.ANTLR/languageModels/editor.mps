@@ -2,7 +2,7 @@
 <model ref="r:8fcdc1d5-62b0-49c3-b59b-b0f3e41cf2ff(org.campagnelab.ANTLR.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="11" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="13" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -353,7 +353,7 @@
       <node concept="3EZMnI" id="7a2u8aSAwLU" role="3EZMnx">
         <node concept="2EHx9g" id="7a2u8aSBFnu" role="2iSdaV" />
         <node concept="3F2HdR" id="6cuUYchdKXz" role="3EZMnx">
-          <property role="Q2I2d" value="punctuation" />
+          <property role="Q2I2d" value="g$1Qtxb/punctuation" />
           <ref role="1NtTu8" to="ubjp:6cuUYchcH_D" resolve="oneOf" />
           <node concept="l2Vlx" id="6cuUYchdKX$" role="2czzBx" />
           <node concept="pj6Ft" id="6cuUYchelNR" role="3F10Kt">
@@ -877,7 +877,7 @@
         </node>
       </node>
       <node concept="PMmxH" id="6cuUYchfOcl" role="3EZMnx">
-        <property role="1cu_pB" value="1" />
+        <property role="1cu_pB" value="gtgu$YJ/attractsFocus" />
         <ref role="PMmxG" node="6cuUYchfkRC" resolve="OptionalParamEditor" />
       </node>
       <node concept="l2Vlx" id="6cuUYchfAmc" role="2iSdaV" />
@@ -1415,7 +1415,7 @@
         <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
       </node>
       <node concept="3F0A7n" id="v1yTSnJDGl" role="3EZMnx">
-        <ref role="1NtTu8" to="ubjp:v1yTSnIBWj" resolve="operator" />
+        <ref role="1NtTu8" to="ubjp:7T68DFfArND" resolve="operator" />
         <node concept="11L4FC" id="v1yTSnMRqW" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>

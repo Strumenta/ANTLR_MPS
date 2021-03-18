@@ -2,9 +2,9 @@
 <model ref="r:324aeb27-9266-4ede-aeba-c7d35018807b(org.campagnelab.ANTLR.behavior)">
   <persistence version="9" />
   <languages>
-    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="1" />
+    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="2" />
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="6" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="9" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -21,7 +21,6 @@
       </concept>
       <concept id="1225194413805" name="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" flags="in" index="13hLZK" />
       <concept id="1225194472830" name="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" flags="ng" index="13i0hz">
-        <property id="1225194472833" name="isPrivate" index="13i0is" />
         <property id="1225194472832" name="isVirtual" index="13i0it" />
         <property id="1225194472834" name="isAbstract" index="13i0iv" />
         <reference id="1225194472831" name="overriddenMethod" index="13i0hy" />
@@ -170,13 +169,6 @@
       </concept>
       <concept id="1180636770613" name="jetbrains.mps.lang.smodel.structure.SNodeCreator" flags="nn" index="3zrR0B">
         <child id="1180636770616" name="createdType" index="3zrR0E" />
-      </concept>
-      <concept id="1240930118027" name="jetbrains.mps.lang.smodel.structure.SEnumOperationInvocation" flags="nn" index="3HcIyF">
-        <reference id="1240930118028" name="enumDeclaration" index="3HcIyG" />
-        <child id="1240930317927" name="operation" index="3Hdvt7" />
-      </concept>
-      <concept id="1240930444878" name="jetbrains.mps.lang.smodel.structure.SEnum_MemberForValueOperation" flags="ng" index="3HdYtI">
-        <child id="1240930444879" name="valueExpression" index="3HdYtJ" />
       </concept>
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
@@ -1206,7 +1198,6 @@
       </node>
     </node>
     <node concept="13i0hz" id="hEwIO9y" role="13h7CS">
-      <property role="13i0is" value="false" />
       <property role="TrG5h" value="getFqName" />
       <property role="13i0it" value="true" />
       <node concept="17QB3L" id="4druX3VZQ6d" role="3clF45" />
@@ -1947,15 +1938,10 @@
                   </node>
                 </node>
               </node>
-              <node concept="3HcIyF" id="v1yTSnZLE1" role="3uHU7w">
-                <ref role="3HcIyG" to="ubjp:v1yTSnIBWR" resolve="LABELING_OPERATOR" />
-                <node concept="3HdYtI" id="v1yTSnZLTX" role="3Hdvt7">
-                  <node concept="2OqwBi" id="v1yTSnZvBz" role="3HdYtJ">
-                    <node concept="13iPFW" id="v1yTSnZvyf" role="2Oq$k0" />
-                    <node concept="3TrcHB" id="v1yTSnZw6z" role="2OqNvi">
-                      <ref role="3TsBF5" to="ubjp:v1yTSnIBWj" resolve="operator" />
-                    </node>
-                  </node>
+              <node concept="2OqwBi" id="v1yTSnZvBz" role="3uHU7w">
+                <node concept="13iPFW" id="v1yTSnZvyf" role="2Oq$k0" />
+                <node concept="3TrcHB" id="v1yTSnZw6z" role="2OqNvi">
+                  <ref role="3TsBF5" to="ubjp:7T68DFfArND" resolve="operator" />
                 </node>
               </node>
             </node>

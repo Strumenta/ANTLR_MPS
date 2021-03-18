@@ -2,9 +2,10 @@
 <model ref="r:3172cd41-bcad-4d57-92e5-868449e54828(org.campagnelab.antlr.tomps.intentions)">
   <persistence version="9" />
   <languages>
-    <use id="d7a92d38-f7db-40d0-8431-763b0c3c9f20" name="jetbrains.mps.lang.intentions" version="0" />
+    <use id="d7a92d38-f7db-40d0-8431-763b0c3c9f20" name="jetbrains.mps.lang.intentions" version="1" />
     <use id="96ee7a94-411d-4cf8-9b94-96cad7e52411" name="jetbrains.mps.baseLanguage.jdk7" version="0" />
-    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
+    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="2" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="9" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -109,11 +110,8 @@
         <child id="1163670677455" name="expression" index="3Kbmr1" />
         <child id="1163670683720" name="body" index="3Kbo56" />
       </concept>
-      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
-        <property id="6329021646629104958" name="text" index="3SKdUp" />
-      </concept>
       <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
-        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
+        <child id="1350122676458893092" name="text" index="3ndbpf" />
       </concept>
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
     </language>
@@ -144,11 +142,11 @@
       </concept>
       <concept id="1240322627579" name="jetbrains.mps.lang.intentions.structure.IntentionParameter" flags="nn" index="38Zlrr" />
       <concept id="1240395258925" name="jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration" flags="ig" index="3dkpOd">
-        <child id="1240395532443" name="queryBlock" index="3dlsAV" />
+        <child id="1240395532443" name="queryFunction" index="3dlsAV" />
       </concept>
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
+      <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="ng" index="34ab3g">
         <property id="1167245565795" name="severity" index="35gtTG" />
         <child id="1167227463056" name="logExpression" index="34bqiv" />
       </concept>
@@ -169,8 +167,10 @@
       <concept id="1171315804604" name="jetbrains.mps.lang.smodel.structure.Model_RootsOperation" flags="nn" index="2RRcyG">
         <reference id="1171315804605" name="concept" index="2RRcyH" />
       </concept>
+      <concept id="1966870290088668512" name="jetbrains.mps.lang.smodel.structure.Enum_MemberLiteral" flags="ng" index="2ViDtV">
+        <reference id="1966870290088668516" name="memberDeclaration" index="2ViDtZ" />
+      </concept>
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
-      <concept id="1240171359678" name="jetbrains.mps.lang.smodel.structure.EnumMember_ValueOperation" flags="nn" index="2ZYiMu" />
       <concept id="3562215692195599741" name="jetbrains.mps.lang.smodel.structure.SLinkImplicitSelect" flags="nn" index="13MTOL">
         <reference id="3562215692195600259" name="link" index="13MTZf" />
       </concept>
@@ -188,13 +188,6 @@
       <concept id="1180636770613" name="jetbrains.mps.lang.smodel.structure.SNodeCreator" flags="nn" index="3zrR0B">
         <child id="1180636770616" name="createdType" index="3zrR0E" />
       </concept>
-      <concept id="1240930118027" name="jetbrains.mps.lang.smodel.structure.SEnumOperationInvocation" flags="nn" index="3HcIyF">
-        <reference id="1240930118028" name="enumDeclaration" index="3HcIyG" />
-        <child id="1240930317927" name="operation" index="3Hdvt7" />
-      </concept>
-      <concept id="1240930444945" name="jetbrains.mps.lang.smodel.structure.SEnum_MemberOperation" flags="ng" index="3HdYuL">
-        <reference id="1240930444946" name="member" index="3HdYuM" />
-      </concept>
       <concept id="1140131837776" name="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation" flags="nn" index="1P9Npp">
         <child id="1140131861877" name="replacementNode" index="1P9ThW" />
       </concept>
@@ -210,6 +203,9 @@
       <concept id="1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" flags="nn" index="3Tsc0h">
         <reference id="1138056546658" name="link" index="3TtcxE" />
       </concept>
+      <concept id="5779574625830813396" name="jetbrains.mps.lang.smodel.structure.EnumerationIdRefExpression" flags="ng" index="1XH99k">
+        <reference id="5779574625830813397" name="enumDeclaration" index="1XH99l" />
+      </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -221,10 +217,18 @@
       </concept>
       <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
         <property id="709746936026609031" name="linkId" index="3V$3ak" />
-        <property id="709746936026609029" name="linkRole" index="3V$3am" />
+        <property id="709746936026609029" name="role_DebugInfo" index="3V$3am" />
       </concept>
       <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
         <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
+      </concept>
+    </language>
+    <language id="c7fb639f-be78-4307-89b0-b5959c3fa8c8" name="jetbrains.mps.lang.text">
+      <concept id="155656958578482948" name="jetbrains.mps.lang.text.structure.Word" flags="ng" index="3oM_SD">
+        <property id="155656958578482949" name="value" index="3oM_SC" />
+      </concept>
+      <concept id="2535923850359271782" name="jetbrains.mps.lang.text.structure.Line" flags="ng" index="1PaTwC">
+        <child id="2535923850359271783" name="elements" index="1PaTwD" />
       </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
@@ -517,8 +521,28 @@
     <node concept="2Sbjvc" id="3_THA0Uev0F" role="2ZfgGD">
       <node concept="3clFbS" id="3_THA0Uev0G" role="2VODD2">
         <node concept="3SKdUt" id="3_THA0Uhoyd" role="3cqZAp">
-          <node concept="3SKdUq" id="3_THA0Uhp$X" role="3SKWNk">
-            <property role="3SKdUp" value="add any missing alternatives for the concept:" />
+          <node concept="1PaTwC" id="7T68DFfArIU" role="3ndbpf">
+            <node concept="3oM_SD" id="7T68DFfArIV" role="1PaTwD">
+              <property role="3oM_SC" value="add" />
+            </node>
+            <node concept="3oM_SD" id="7T68DFfArIW" role="1PaTwD">
+              <property role="3oM_SC" value="any" />
+            </node>
+            <node concept="3oM_SD" id="7T68DFfArIX" role="1PaTwD">
+              <property role="3oM_SC" value="missing" />
+            </node>
+            <node concept="3oM_SD" id="7T68DFfArIY" role="1PaTwD">
+              <property role="3oM_SC" value="alternatives" />
+            </node>
+            <node concept="3oM_SD" id="7T68DFfArIZ" role="1PaTwD">
+              <property role="3oM_SC" value="for" />
+            </node>
+            <node concept="3oM_SD" id="7T68DFfArJ0" role="1PaTwD">
+              <property role="3oM_SC" value="the" />
+            </node>
+            <node concept="3oM_SD" id="7T68DFfArJ1" role="1PaTwD">
+              <property role="3oM_SC" value="concept:" />
+            </node>
           </node>
         </node>
         <node concept="3cpWs8" id="3_THA0UgFj2" role="3cqZAp">
@@ -584,8 +608,58 @@
                       <node concept="3clFbS" id="3_THA0UgXh6" role="1bW5cS">
                         <node concept="3clFbH" id="4l9KHPa0_tg" role="3cqZAp" />
                         <node concept="3SKdUt" id="3_THA0Uhzjl" role="3cqZAp">
-                          <node concept="3SKdUq" id="3_THA0Uh$wT" role="3SKWNk">
-                            <property role="3SKdUp" value="only add mapper when (1) one not already present (2) alt is at top level of rule" />
+                          <node concept="1PaTwC" id="7T68DFfArJ2" role="3ndbpf">
+                            <node concept="3oM_SD" id="7T68DFfArJ3" role="1PaTwD">
+                              <property role="3oM_SC" value="only" />
+                            </node>
+                            <node concept="3oM_SD" id="7T68DFfArJ4" role="1PaTwD">
+                              <property role="3oM_SC" value="add" />
+                            </node>
+                            <node concept="3oM_SD" id="7T68DFfArJ5" role="1PaTwD">
+                              <property role="3oM_SC" value="mapper" />
+                            </node>
+                            <node concept="3oM_SD" id="7T68DFfArJ6" role="1PaTwD">
+                              <property role="3oM_SC" value="when" />
+                            </node>
+                            <node concept="3oM_SD" id="7T68DFfArJ7" role="1PaTwD">
+                              <property role="3oM_SC" value="(1)" />
+                            </node>
+                            <node concept="3oM_SD" id="7T68DFfArJ8" role="1PaTwD">
+                              <property role="3oM_SC" value="one" />
+                            </node>
+                            <node concept="3oM_SD" id="7T68DFfArJ9" role="1PaTwD">
+                              <property role="3oM_SC" value="not" />
+                            </node>
+                            <node concept="3oM_SD" id="7T68DFfArJa" role="1PaTwD">
+                              <property role="3oM_SC" value="already" />
+                            </node>
+                            <node concept="3oM_SD" id="7T68DFfArJb" role="1PaTwD">
+                              <property role="3oM_SC" value="present" />
+                            </node>
+                            <node concept="3oM_SD" id="7T68DFfArJc" role="1PaTwD">
+                              <property role="3oM_SC" value="(2)" />
+                            </node>
+                            <node concept="3oM_SD" id="7T68DFfArJd" role="1PaTwD">
+                              <property role="3oM_SC" value="alt" />
+                            </node>
+                            <node concept="3oM_SD" id="7T68DFfArJe" role="1PaTwD">
+                              <property role="3oM_SC" value="is" />
+                            </node>
+                            <node concept="3oM_SD" id="7T68DFfArJf" role="1PaTwD">
+                              <property role="3oM_SC" value="at" />
+                            </node>
+                            <node concept="3oM_SD" id="7T68DFfArJg" role="1PaTwD">
+                              <property role="3oM_SC" value="top" />
+                            </node>
+                            <node concept="3oM_SD" id="7T68DFfArJh" role="1PaTwD">
+                              <property role="3oM_SC" value="level" />
+                            </node>
+                            <node concept="3oM_SD" id="7T68DFfArJi" role="1PaTwD">
+                              <property role="3oM_SC" value="of" />
+                            </node>
+                            <node concept="3oM_SD" id="7T68DFfArJj" role="1PaTwD">
+                              <property role="3oM_SC" value="rule" />
+                            </node>
                           </node>
                         </node>
                         <node concept="3clFbF" id="3_THA0UgZEB" role="3cqZAp">
@@ -651,8 +725,16 @@
                   <node concept="1bVj0M" id="3_THA0Ufatw" role="23t8la">
                     <node concept="3clFbS" id="3_THA0Ufatx" role="1bW5cS">
                       <node concept="3SKdUt" id="3_THA0UhJw_" role="3cqZAp">
-                        <node concept="3SKdUq" id="3_THA0UhJGN" role="3SKWNk">
-                          <property role="3SKdUp" value="add the mapper:" />
+                        <node concept="1PaTwC" id="7T68DFfArJk" role="3ndbpf">
+                          <node concept="3oM_SD" id="7T68DFfArJl" role="1PaTwD">
+                            <property role="3oM_SC" value="add" />
+                          </node>
+                          <node concept="3oM_SD" id="7T68DFfArJm" role="1PaTwD">
+                            <property role="3oM_SC" value="the" />
+                          </node>
+                          <node concept="3oM_SD" id="7T68DFfArJn" role="1PaTwD">
+                            <property role="3oM_SC" value="mapper:" />
+                          </node>
                         </node>
                       </node>
                       <node concept="3cpWs8" id="3_THA0UfdLC" role="3cqZAp">
@@ -872,8 +954,28 @@
                     </node>
                   </node>
                   <node concept="3SKdUt" id="7_99kI8dxdZ" role="3cqZAp">
-                    <node concept="3SKdUq" id="7_99kI8dxnS" role="3SKWNk">
-                      <property role="3SKdUp" value="TODO propagate resolve to source and destinations.." />
+                    <node concept="1PaTwC" id="7T68DFfArJo" role="3ndbpf">
+                      <node concept="3oM_SD" id="7T68DFfArJp" role="1PaTwD">
+                        <property role="3oM_SC" value="TODO" />
+                      </node>
+                      <node concept="3oM_SD" id="7T68DFfArJq" role="1PaTwD">
+                        <property role="3oM_SC" value="propagate" />
+                      </node>
+                      <node concept="3oM_SD" id="7T68DFfArJr" role="1PaTwD">
+                        <property role="3oM_SC" value="resolve" />
+                      </node>
+                      <node concept="3oM_SD" id="7T68DFfArJs" role="1PaTwD">
+                        <property role="3oM_SC" value="to" />
+                      </node>
+                      <node concept="3oM_SD" id="7T68DFfArJt" role="1PaTwD">
+                        <property role="3oM_SC" value="source" />
+                      </node>
+                      <node concept="3oM_SD" id="7T68DFfArJu" role="1PaTwD">
+                        <property role="3oM_SC" value="and" />
+                      </node>
+                      <node concept="3oM_SD" id="7T68DFfArJv" role="1PaTwD">
+                        <property role="3oM_SC" value="destinations.." />
+                      </node>
                     </node>
                   </node>
                   <node concept="1X3_iC" id="1a408cs6K_w" role="lGtFl">
@@ -1008,17 +1110,16 @@
                 <ref role="3cqZAo" node="v1yTSogwMI" resolve="labeled" />
               </node>
               <node concept="3TrcHB" id="v1yTSogExE" role="2OqNvi">
-                <ref role="3TsBF5" to="ubjp:v1yTSnIBWj" resolve="operator" />
+                <ref role="3TsBF5" to="ubjp:7T68DFfArND" resolve="operator" />
               </node>
             </node>
-            <node concept="2OqwBi" id="v1yTSogGKe" role="37vLTx">
-              <node concept="3HcIyF" id="v1yTSogGs2" role="2Oq$k0">
-                <ref role="3HcIyG" to="ubjp:v1yTSnIBWR" resolve="LABELING_OPERATOR" />
-                <node concept="3HdYuL" id="v1yTSogGC7" role="3Hdvt7">
-                  <ref role="3HdYuM" to="ubjp:v1yTSnIBWS" />
-                </node>
+            <node concept="2OqwBi" id="7T68DFfArR3" role="37vLTx">
+              <node concept="1XH99k" id="7T68DFfArR4" role="2Oq$k0">
+                <ref role="1XH99l" to="ubjp:7T68DFfArNm" resolve="LABELING_OPERATOR" />
               </node>
-              <node concept="2ZYiMu" id="v1yTSogH5D" role="2OqNvi" />
+              <node concept="2ViDtV" id="7T68DFfArR5" role="2OqNvi">
+                <ref role="2ViDtZ" to="ubjp:7T68DFfArNo" resolve="_" />
+              </node>
             </node>
           </node>
         </node>
